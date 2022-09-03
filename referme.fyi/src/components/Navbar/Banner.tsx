@@ -4,7 +4,7 @@ const Banner:React.FC = () => {
     
     return (
         <Flex bg="blue.300" height="36px" align="center">
-            <Text color="white" margin="auto" fontWeight={700}>Welcome to referme.fyi! Interested in contributing? Click here</Text>
+            <Text color="white" margin="auto" fontWeight={700}>🎉&nbsp;&nbsp;&nbsp;Welcome to referme.fyi! Interested in contributing? Click here&nbsp;&nbsp;&nbsp;🎉</Text>
         </Flex>
     )
 }
