@@ -1,30 +1,33 @@
 import { Button, Divider, Input, Text, Image, Flex } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useSetRecoilState } from 'recoil';
 import { authModalState } from '../../../atoms/authModalAtom';
 import { auth } from '../../../firebase/clientApp';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import { FIREBASE_ERRORS } from '../../../firebase/errors';
 
-type LoginProps = {
+type SignUpProps = {
     
 };
 
-const Login:React.FC<LoginProps> = () => {
+const SignUp:React.FC<SignUpProps> = () => {
 
     const setAuthModalState = useSetRecoilState(authModalState)
 
-    const [loginForm, setLoginForm] = useState({
+    const [signUpForm, setSignUpForm] = useState({
         email: '',
         password: '',
+        confirmPassword: '',
     })
 
+    const [error, setError] = useState('')
+
     const [
-        signInWithEmailAndPassword,
+        createUserWithEmailAndPassword,
         user,
         loading,
-        error,
-    ] = useSignInWithEmailAndPassword(auth)
+        userError,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
     const [
         signInWithGoogle, 
@@ -33,15 +36,28 @@ const Login:React.FC<LoginProps> = () => {
         googleError
     ] = useSignInWithGoogle(auth);
 
+
     // firebase logic
     const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        // reset error if there is an error
+        if (error) setError('');
+        // check if passwords match
+        if (signUpForm.password.length < 8 || signUpForm.password.length < 8) {
+            setError('Password must be at least 8 characters')
+            return
+        }
 
-        signInWithEmailAndPassword(loginForm.email, loginForm.password)
+        if (signUpForm.password !== signUpForm.confirmPassword) {
+            setError('Passwords do not match')
+            return
+        }
+
+        createUserWithEmailAndPassword(signUpForm.email, signUpForm.password);
     }
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setLoginForm(prev => ({
+        setSignUpForm(prev => ({
             ...prev,
             [event.target.name]: event.target.value,
         }))
@@ -49,26 +65,21 @@ const Login:React.FC<LoginProps> = () => {
 
     return (
         <form onSubmit={onSubmit}>
-            <Text color="gray.500" fontSize="10pt" mb={2}>Sign in to connect with referees or applicants</Text>
+            <Text color="gray.500" fontSize="10pt" mb={2}>Sign up to connect with referees or applicants</Text>
             <Text fontWeight={700}>Email</Text>
             <Input required name="email" placeholder="Email Address" type="email" mb={2} onChange={onChange} />
             <Text fontWeight={700}>Password</Text>
             <Input mb={2} required name="password" placeholder="Password" type="password" onChange={onChange} />
-            <Text textAlign='center' color='red' fontSize='10pt'>{FIREBASE_ERRORS[error?.message as keyof typeof FIREBASE_ERRORS]}</Text>
-            <Button _loading={{backgroundColor: 'teal.400'}} isLoading={loading || googleLoading} width='100%' height='36px' mt={2} mb={2} bg="brand.100" color="white" type='submit' _hover={{backgroundColor: 'teal.400'}}>Sign In</Button>
+            <Text fontWeight={700}>Confirm Password</Text>
+            <Input mb={2} required name="confirmPassword" placeholder="Confirm Password" type="password" onChange={onChange} />
+            { (error || userError) && <Text textAlign='center' color='red' fontSize='10pt'>{error || FIREBASE_ERRORS[userError?.message as keyof typeof FIREBASE_ERRORS]}</Text> }
+            <Button _loading={{backgroundColor: 'teal.400'}} isLoading={loading || googleLoading} width='100%' height='36px' mt={2} mb={2} bg="brand.100" color="white" type='submit' _hover={{backgroundColor: 'teal.400'}}>Create Account</Button>
             <Flex justify="center">
-                <Text textAlign="center" fontSize="9pt" mt={1}>Forgot your password?&nbsp;</Text>
-                <Text textAlign="center" fontSize="9pt" mt={1} color="blue.500" fontWeight={700} _hover={{cursor: 'pointer'}} onClick={() => setAuthModalState((prev) => ({
-                    ...prev,
-                    view: 'resetPassword',
-                }))}>Reset</Text>
-            </Flex>
-            <Flex justify="center">
-                <Text textAlign="center" fontSize="9pt" mt={2} mb={3}>New here?&nbsp;</Text>
+                <Text textAlign="center" fontSize="9pt" mt={2} mb={3}>Already have an account?&nbsp;</Text>
                 <Text textAlign="center" mt={2} mb={2} fontSize="9pt" fontWeight={700} color="blue.600" _hover={{cursor: 'pointer'}} onClick={() => setAuthModalState((prev) => ({
                     ...prev,
-                    view: 'signup',
-                }))}> SIGN UP</Text>
+                    view: 'login',
+                }))}> LOGIN</Text>
             </Flex>
             <Flex>
                 <Divider borderColor="gray.500" mr={2} alignSelf="center" />
@@ -84,4 +95,4 @@ const Login:React.FC<LoginProps> = () => {
         </form>
     )
 }
-export default Login;
+export default SignUp;

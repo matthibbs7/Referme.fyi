@@ -14,6 +14,7 @@ const About: NextPage = () => {
         <Text mb={10} maxWidth="760px">According to HR Technologist, “employees hired via referrals come in 55% faster than those sourced through career sites and this could make a world of difference for competitive firms, tight schedules, and demanding product development pipelines”. Having a referral can help separate you from other job candidates and may increase your chances of getting an interview or job offer.</Text>
         <Heading fontFamily="Nunito" mb={5}>Why should I give a referral?</Heading>
         <Text mb={10} maxWidth="760px">At many big companies, employee referrals come with a cash referral bonus. Because tech talent is so hard to find, companies are willing to pay big bucks to get the inside scoop on potential candidates. It's worth noting that not every company has a paid referral program in place. Some organizations only want to evaluate candidates on the merit of their work. But as the tech hiring marketplace heats up and recruiters fight to attract quality employees, employee referrals are becoming even more valuable. Additionally, employees want to work with people they've worked with before! It makes onboarding easier and can boost company culture all around to have familiar faces around the office.</Text>
+        <Text fontWeight={700} mb={10}>Don't miss out! Leverage the power of referrals today!</Text>
     </Flex>
   )
 }
