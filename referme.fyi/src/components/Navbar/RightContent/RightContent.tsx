@@ -19,7 +19,6 @@ const RightContent:React.FC<RightContentProps> = ({ user }) => {
                 
                 <Button 
                     borderRadius="4px" 
-                    mr={2} 
                     colorScheme="teal" 
                     color="white" 
                     fontSize={14} 

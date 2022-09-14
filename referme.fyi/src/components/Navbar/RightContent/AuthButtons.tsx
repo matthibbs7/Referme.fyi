@@ -18,7 +18,6 @@ const AuthButtons:React.FC = () => {
             </Button>
             <Button 
                 borderRadius="4px" 
-                mr={2} 
                 colorScheme="teal" 
                 color="white" 
                 fontSize={14} 
