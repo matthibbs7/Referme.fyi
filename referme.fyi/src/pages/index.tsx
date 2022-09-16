@@ -7,7 +7,7 @@ import { Text, Flex } from '@chakra-ui/react'
 const Home: NextPage = () => {
   return (
     <Flex justifyContent='center'>
-      <Flex width="100%" maxWidth="1200px" bgColor="gray.300" flexDirection='column'>
+      <Flex width="100%" maxWidth="1200px" bgColor="gray.100" flexDirection='column'>
         <Trending />
       </Flex>
     </Flex>

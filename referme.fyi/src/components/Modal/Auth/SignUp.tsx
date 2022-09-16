@@ -87,8 +87,8 @@ const SignUp:React.FC<SignUpProps> = () => {
                 <Divider borderColor="gray.500" alignSelf="center" />
             </Flex>
             <Flex justify="center" mt={3}>
-                <Image _hover={{cursor: 'pointer'}} ml={4} alt="facebook" src="/images/facebook.png" height="20px" mr={4} />
-                <Image _hover={{cursor: 'pointer'}} alt="google" src="/images/googlelogo.png" height="20px" mr={4} onClick={() => signInWithGoogle()} />
+                <Image _hover={{cursor: 'pointer'}} ml={4} alt="facebook" src="/images/company_logos/facebook.png" height="20px" mr={4} />
+                <Image _hover={{cursor: 'pointer'}} alt="google" src="/images/company_logos/googlelogo.png" height="20px" mr={4} onClick={() => signInWithGoogle()} />
                 <Image _hover={{cursor: 'pointer'}} alt="github" src="/images/githublogo.png" height="20px" mr={4} />
             </Flex>
             {googleError && <Text mt={2} color='red' fontSize='10pt'>{FIREBASE_ERRORS[googleError.message as keyof typeof FIREBASE_ERRORS]}</Text>}
