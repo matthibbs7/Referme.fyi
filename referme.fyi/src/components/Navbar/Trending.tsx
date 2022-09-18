@@ -24,18 +24,20 @@ const Trending:React.FC<TrendingProps> = () => {
                     <Divider borderColor="black" />
 
                     <Flex mt={8} flexDirection="column">
-                        <Flex height="140px" bgColor="red.300" width="100%" borderRadius="10px" p={5} flexDirection="row">
-                            <Flex flexDirection="column" width="50%" p={2} bgColor="white" borderRadius="8px">
-                                <Flex flexDirection="row" height="50%" justifyContent="center">
-                                    <Image mt={1} mr={2} _hover={{cursor: 'pointer'}} alt="facebook" src="/images/company_logos/googlelogo.png" height="30px" />
-                                    <Text mt={1} color="black" fontWeight={700} fontSize="16pt" height="50%">Google</Text>
+                        <Flex height="140px" bgColor="red.300" width="100%" borderRadius="10px" p={3} flexDirection="row">
+                            <Flex flexDirection="row" width="100%" bgColor="white" borderRadius="8px" p={2}>
+                                <Flex flexDirection="column" width="50%" p={2}>
+                                    <Flex flexDirection="row" height="50%" justifyContent="center">
+                                        <Image mt={1} mr={2} _hover={{cursor: 'pointer'}} alt="facebook" src="/images/company_logos/googlelogo.png" height="30px" />
+                                        <Text mt={1} color="black" fontWeight={700} fontSize="16pt" height="50%">Google</Text>
+                                    </Flex>
+                                    <Button mt={2} bgColor="gray.200"><IoReaderOutline /> <Text ml={2}>Info</Text></Button>
                                 </Flex>
-                                <Button mt={2} bgColor="gray.200"><IoReaderOutline /> <Text ml={2}>Info</Text></Button>
-                            </Flex>
-                            <Flex flexDirection="column" width="50%" p={2}>
-                                
-                                <Button>Referrals</Button>
-                                <Button colorScheme="blackAlpha" mt={2}>Give a Referral</Button>
+                                <Flex flexDirection="column" width="50%" p={2}>
+                                    <Button bgColor="gray.200" mt={0.5}>Give a Referral</Button>
+                                    <Button mt={2} bgColor="#29CC98" color="white" _hover={{bgColor: 'teal.400'}} _active={{bgColor: 'teal.500'}} >Referrals</Button>
+                                    
+                                </Flex>
                             </Flex>
                         </Flex>
                         <Flex mt={4} height="140px" bgColor="orange.300" width="100%" borderRadius="10px" p={5}>
