@@ -104,7 +104,7 @@ const Trending:React.FC<TrendingProps> = () => {
                                 <Flex flexDirection="column" width="50%"  p={2}>
                                     
                                     
-                                    <Button height="45px" >Give a Referral</Button>
+                                    <Button height="45px" >Give a Referra</Button>
                                     <Button mt={2} bgColor="#29CC98" color="white" height="45px">Referrals</Button>
                                 </Flex>
                             </Flex>
