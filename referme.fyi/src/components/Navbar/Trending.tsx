@@ -13,7 +13,7 @@ const Trending:React.FC<TrendingProps> = () => {
     
     return (
         <Flex mt={5} flexDirection='row' flexWrap="wrap" display="flex" justifyContent="center">
-            <Flex ml={2} flexDirection='column' mb={5} minWidth="60px" bgColor='gray.200' mr={6} borderRadius='15px' height="900px">
+            <Flex ml={2} flexDirection='column' mb={5} minWidth="60px" bgColor='gray.200' mr={6} borderRadius='15px' height="720px">
                 <Flex height="120px" p={5} flexDirection="column">
                     <Flex flexDirection="row">
                         <Text fontWeight={700} fontSize="18pt">Popular</Text> 
@@ -88,27 +88,10 @@ const Trending:React.FC<TrendingProps> = () => {
                                 </Flex>
                             </Flex>
                         </Flex>
-                        <Flex mt={4} height="140px" bgColor="gray.300" width="100%" borderRadius="10px" p={2} flexDirection="row">
-                            <Flex bgColor="white" flexDirection="row" width="100%" borderRadius="8px" p={2} border="2px solid lightgray">
-                                <Flex flexDirection="column" width="50%" p={2} borderRight="2px solid lightgray" mt={2} mb={2}>
-                                    <Flex flexDirection="row" height="50%" justifyContent="center" mt="auto" mb="auto">
-                                        <Image mt={1} mr={2} _hover={{cursor: 'pointer'}} alt="facebook" src="/images/company_logos/apple.svg" height="30px" />
-                                        <Text mt={1} color="black" fontWeight={700} fontSize="16pt" height="50%">Apple</Text>
-                                    </Flex>
-                                    
-                                </Flex>
-                                <Flex flexDirection="column" width="50%"  p={2}>
-                                    
-                                    
-                                    <Button border="2px solid lightgray" height="45px"><GrContactInfo /><Text ml={2}>Referrals</Text></Button>
-                                    <Button border="2px solid lightgray" height="45px" mt={2}><BiDonateHeart /><Text ml={2}>Give a Ref.</Text></Button>
-                                </Flex>
-                            </Flex>
-                        </Flex>
                     </Flex>
                 </Flex>
             </Flex>
-            <Flex flexDirection='column' mb={5} minWidth="60px" bgColor='gray.200' mr={6} borderRadius='15px' height="900px">
+            <Flex flexDirection='column' mb={5} minWidth="60px" bgColor='gray.200' mr={6} borderRadius='15px' height="720px">
             <Flex height="120px" p={5} flexDirection="column">
                     <Flex flexDirection="row">
                         <Text fontWeight={700} fontSize="18pt">Trending</Text> 
@@ -155,7 +138,7 @@ const Trending:React.FC<TrendingProps> = () => {
                                 </Flex>
                             </Flex>
                         </Flex>
-                        <Flex mt={4} height="140px" bgColor="red.300" width="100%" borderRadius="10px" p={2} flexDirection="row">
+                        <Flex mt={4} height="140px" bgColor="red.500" width="100%" borderRadius="10px" p={2} flexDirection="row">
                             <Flex bgColor="white" flexDirection="row" width="100%" borderRadius="8px" p={2} border="2px solid lightgray">
                                 <Flex flexDirection="column" width="50%" p={2} borderRight="2px solid lightgray" mt={2} mb={2}>
                                     <Flex flexDirection="row" height="50%" justifyContent="center" mt="auto" mb="auto">
@@ -189,27 +172,10 @@ const Trending:React.FC<TrendingProps> = () => {
                                 </Flex>
                             </Flex>
                         </Flex>
-                        <Flex mt={4} height="140px" bgColor="#29CC98" width="100%" borderRadius="10px" p={2} flexDirection="row">
-                            <Flex bgColor="white" flexDirection="row" width="100%" borderRadius="8px" p={2}>
-                                <Flex flexDirection="column" width="50%" p={2} borderRight="2px solid lightgray" mt={2} mb={2}>
-                                    <Flex flexDirection="row" height="50%" justifyContent="center" mt="auto" mb="auto">
-                                        <Image mt={1} mr={2} _hover={{cursor: 'pointer'}} alt="facebook" src="/images/company_logos/apple.svg" height="30px" />
-                                        <Text mt={1} color="black" fontWeight={700} fontSize="16pt" height="50%">Apple</Text>
-                                    </Flex>
-                                  
-                                </Flex>
-                                <Flex flexDirection="column" width="50%"  p={2}>
-                                    
-                                    
-                                    <Button height="45px"><GrContactInfo /><Text ml={2}>Referrals</Text></Button>
-                                    <Button height="45px" mt={2}><BiDonateHeart /><Text ml={2}>Give a Ref.</Text></Button>
-                                </Flex>
-                            </Flex>
-                        </Flex>
                     </Flex>
                 </Flex>
             </Flex> 
-            <Flex flexDirection='column' minWidth="60px" bgColor='gray.200' mr={2} borderRadius='15px' height="900px">
+            <Flex flexDirection='column' minWidth="60px" bgColor='gray.200' mr={2} borderRadius='15px' height="720px">
             <Flex height="120px" p={5} flexDirection="column">
                     <Flex flexDirection="row">
                         <Text fontWeight={700} fontSize="18pt">New</Text> 
@@ -223,91 +189,62 @@ const Trending:React.FC<TrendingProps> = () => {
 
                     <Flex mt={8} flexDirection="column">
                         <Flex height="140px" bgColor="pink.300" width="100%" borderRadius="10px" p={2} flexDirection="row">
-                            <Flex bgColor="white" flexDirection="row" width="100%" borderRadius="8px" p={2}>
-                                <Flex flexDirection="column" width="50%" p={2} borderRight="1px solid gray">
-                                    <Flex flexDirection="row" height="50%" justifyContent="center" mt={1}>
+                            <Flex bgColor="white" flexDirection="row" width="100%" borderRadius="8px" p={2} border="2px solid lightgray">
+                                <Flex flexDirection="column" width="50%" p={2} borderRight="2px solid lightgray" mt={2} mb={2}>
+                                    <Flex flexDirection="row" height="50%" justifyContent="center" mt="auto" mb="auto">
                                         <Image mt={1} mr={2} _hover={{cursor: 'pointer'}} alt="facebook" src="/images/company_logos/airbnb.png" height="30px" />
                                         <Text mt={1} color="black" fontWeight={700} fontSize="16pt" height="50%">Airbnb</Text>
                                     </Flex>
+                                </Flex>
+                                <Flex flexDirection="column" width="50%"  p={2}>
                                     <Button height="45px"><GrContactInfo /><Text ml={2}>Referrals</Text></Button>
-                                    
-                                </Flex>
-                                <Flex flexDirection="column" width="50%"  p={2}>
-                                    
-                                    
-                                    <Button height="43px" variant="ghost"><IoReaderOutline /> <Text ml={2}>Info</Text></Button>
-                                    <Button height="45px" mt={2}><BiDonateHeart /><Text ml={2}>Give a Ref.</Text></Button>
+                                    <Button height="45px" mt={2}><BiDonateHeart /><Text ml={2}>Give a Ref</Text></Button>
                                 </Flex>
                             </Flex>
                         </Flex>
-                        <Flex mt={4} height="140px" bgColor="#29CC98" width="100%" borderRadius="10px" p={2} flexDirection="row">
-                            <Flex bgColor="white" flexDirection="row" width="100%" borderRadius="8px" p={2}>
-                                <Flex flexDirection="column" width="50%" p={2} borderRight="1px solid gray">
-                                    <Flex flexDirection="row" height="50%" justifyContent="center" mt={1}>
-                                        <Image mt={1} mr={2} _hover={{cursor: 'pointer'}} alt="facebook" src="/images/company_logos/amazonlogo.jpg" height="30px" />
-                                        <Text mt={1} color="black" fontWeight={700} fontSize="16pt" height="50%">Amazon</Text>
+                        <Flex mt={4} height="140px" bgColor="red.300" width="100%" borderRadius="10px" p={2} flexDirection="row">
+                            <Flex bgColor="white" flexDirection="row" width="100%" borderRadius="8px" p={2} border="2px solid lightgray">
+                                <Flex flexDirection="column" width="50%" p={2} borderRight="2px solid lightgray" mt={2} mb={2}>
+                                    <Flex flexDirection="row" height="50%" justifyContent="center" mt="auto" mb="auto">
+                                        <Image mt={1} mr={2} _hover={{cursor: 'pointer'}} alt="facebook" src="/images/company_logos/databricks.png" height="30px" />
+                                        <Text mt={1} color="black" fontWeight={700} fontSize="16pt" height="50%">Databricks</Text>
                                     </Flex>
-                                    <Button height="43px" mt={0}><IoReaderOutline /> <Text ml={2}>Info</Text></Button>
                                 </Flex>
                                 <Flex flexDirection="column" width="50%"  p={2}>
-                                    
-                                    
-                                    <Button height="45px" >Give a Referral</Button>
-                                    <Button mt={2} height="45px">Referrals</Button>
+                                    <Button height="45px"><GrContactInfo /><Text ml={2}>Referrals</Text></Button>
+                                    <Button height="45px" mt={2}><BiDonateHeart /><Text ml={2}>Give a Ref</Text></Button>
                                 </Flex>
                             </Flex>
                         </Flex>
-                        <Flex mt={4} height="140px" bgColor="#29CC98" width="100%" borderRadius="10px" p={2} flexDirection="row">
-                            <Flex bgColor="white" flexDirection="row" width="100%" borderRadius="8px" p={2}>
-                                <Flex flexDirection="column" width="50%" p={2} borderRight="1px solid gray">
-                                    <Flex flexDirection="row" height="50%" justifyContent="center" mt={1}>
-                                        <Image mt={1} mr={2} _hover={{cursor: 'pointer'}} alt="facebook" src="/images/company_logos/facebook.png" height="30px" />
-                                        <Text mt={1} color="black" fontWeight={700} fontSize="16pt" height="50%">Facebook</Text>
+                        <Flex mt={4} height="140px" bgColor="blue.900" width="100%" borderRadius="10px" p={2} flexDirection="row">
+                            <Flex bgColor="white" flexDirection="row" width="100%" borderRadius="8px" p={2} border="2px solid lightgray">
+                                <Flex flexDirection="column" width="50%" p={2} borderRight="2px solid lightgray" mt={2} mb={2}>
+                                    <Flex flexDirection="row" height="50%" justifyContent="center" mt="auto" mb="auto">
+                                        <Image mt={1} mr={2} _hover={{cursor: 'pointer'}} alt="facebook" src="/images/company_logos/samsara.jpeg" height="30px" />
+                                        <Text mt={1} color="black" fontWeight={700} fontSize="16pt" height="50%">Samsara</Text>
                                     </Flex>
-                                    <Button height="43px" mt={0}><IoReaderOutline /> <Text ml={2}>Info</Text></Button>
                                 </Flex>
                                 <Flex flexDirection="column" width="50%"  p={2}>
-                                    
-                                    
-                                    <Button height="45px" >Give a Referral</Button>
-                                    <Button mt={2} height="45px">Referrals</Button>
+                                    <Button height="45px"><GrContactInfo /><Text ml={2}>Referrals</Text></Button>
+                                    <Button height="45px" mt={2}><BiDonateHeart /><Text ml={2}>Give a Ref</Text></Button>
                                 </Flex>
                             </Flex>
                         </Flex>
-                        <Flex mt={4} height="140px" bgColor="#29CC98" width="100%" borderRadius="10px" p={2} flexDirection="row">
-                            <Flex bgColor="white" flexDirection="row" width="100%" borderRadius="8px" p={2}>
-                                <Flex flexDirection="column" width="50%" p={2} borderRight="1px solid gray">
-                                    <Flex flexDirection="row" height="50%" justifyContent="center" mt={1}>
-                                        <Image mt={1} mr={2} _hover={{cursor: 'pointer'}} alt="facebook" src="/images/company_logos/microsoft.png" height="30px" />
-                                        <Text mt={1} color="black" fontWeight={700} fontSize="16pt" height="50%">Microsoft</Text>
+                        <Flex mt={4} height="140px" bgColor="cyan.300" width="100%" borderRadius="10px" p={2} flexDirection="row">
+                            <Flex bgColor="white" flexDirection="row" width="100%" borderRadius="8px" p={2} border="2px solid lightgray">
+                                <Flex flexDirection="column" width="50%" p={2} borderRight="2px solid lightgray" mt={2} mb={2}>
+                                    <Flex flexDirection="row" height="50%" justifyContent="center" mt="auto" mb="auto">
+                                        <Image mt={1} mr={2} _hover={{cursor: 'pointer'}} alt="facebook" src="/images/company_logos/stripe.png" height="30px" />
+                                        <Text mt={1} color="black" fontWeight={700} fontSize="16pt" height="50%">Stripe</Text>
                                     </Flex>
-                                    <Button height="43px" mt={0}><IoReaderOutline /> <Text ml={2}>Info</Text></Button>
                                 </Flex>
                                 <Flex flexDirection="column" width="50%"  p={2}>
-                                    
-                                    
-                                    <Button height="45px" >Give a Referral</Button>
-                                    <Button mt={2} height="45px">Referrals</Button>
+                                    <Button height="45px"><GrContactInfo /><Text ml={2}>Referrals</Text></Button>
+                                    <Button height="45px" mt={2}><BiDonateHeart /><Text ml={2}>Give a Ref</Text></Button>
                                 </Flex>
                             </Flex>
                         </Flex>
-                        <Flex mt={4} height="140px" bgColor="#29CC98" width="100%" borderRadius="10px" p={2} flexDirection="row">
-                            <Flex bgColor="white" flexDirection="row" width="100%" borderRadius="8px" p={2}>
-                                <Flex flexDirection="column" width="50%" p={2} borderRight="1px solid gray">
-                                    <Flex flexDirection="row" height="50%" justifyContent="center" mt={1}>
-                                        <Image mt={1} mr={2} _hover={{cursor: 'pointer'}} alt="facebook" src="/images/company_logos/apple.svg" height="30px" />
-                                        <Text mt={1} color="black" fontWeight={700} fontSize="16pt" height="50%">Apple</Text>
-                                    </Flex>
-                                    <Button height="43px" mt={0}><IoReaderOutline /> <Text ml={2}>Info</Text></Button>
-                                </Flex>
-                                <Flex flexDirection="column" width="50%"  p={2}>
-                                    
-                                    
-                                    <Button height="45px" >Give a Referral</Button>
-                                    <Button mt={2} height="45px">Referrals</Button>
-                                </Flex>
-                            </Flex>
-                        </Flex>
+                    
                     </Flex>
                 </Flex>
             </Flex>

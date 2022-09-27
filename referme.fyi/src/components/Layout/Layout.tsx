@@ -3,6 +3,7 @@ import Banner from '../Navbar/Banner';
 import Navbar from '../Navbar/Navbar';
 import SelectorBar from '../Navbar/SelectorBar'
 import { Flex } from '@chakra-ui/react'
+import Footer from '../Footer/Footer';
 type Props = {
     children?: React.ReactNode
 };
@@ -15,6 +16,7 @@ const Layout:React.FC<Props> = ({ children }) => {
             <Navbar />
             <SelectorBar />
             <main>{children}</main>
+            <Footer />
         </>
     )
 }
