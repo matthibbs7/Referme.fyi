@@ -17,11 +17,10 @@ const TechResources:React.FC = () => {
                         <Text mt={2} fontWeight={700}>Essential</Text>
                         <MenuItem onClick={()=>{}} borderRadius="5px"><Link fontWeight={700} textDecoration="none" _hover={{textDecoration: 'none'}} href="https://www.techinterviewhandbook.org/" target="_blank">📖 Tech Interview Handbook</Link></MenuItem>
                         <MenuItem onClick={()=>{}} borderRadius="5px"><Link fontWeight={700} textDecoration="none" _hover={{textDecoration: 'none'}} href="https://www.levels.fyi/" target="_blank">💸 Levels.fyi</Link></MenuItem>
-                        <Text mt={2} fontWeight={700}>Networking</Text>
-                        <MenuItem onClick={()=>{}} borderRadius="5px">Leetcode</MenuItem>
                         <Text mt={2} fontWeight={700}>Technical Problems</Text>
-                        <MenuItem  onClick={()=>{}} borderRadius="5px">Leetcode</MenuItem>
-                        <MenuItem onClick={() =>{}} borderRadius="5px">Create Account</MenuItem> 
+                        <MenuItem onClick={()=>{}} borderRadius="5px"><Link fontWeight={700} textDecoration="none" _hover={{textDecoration: 'none'}} href="https://leetcode.com/" target="_blank">💡 Leetcode</Link></MenuItem>
+                        <MenuItem onClick={()=>{}} borderRadius="5px"><Link fontWeight={700} textDecoration="none" _hover={{textDecoration: 'none'}} href="https://binarysearch.com/" target="_blank">⏱️ Binarysearch</Link></MenuItem>
+                        <Text ml={3}>More Coming Soon...</Text> 
                     </MenuList>
         </Menu>
         
