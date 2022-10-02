@@ -5,6 +5,7 @@ import { IoReaderOutline } from 'react-icons/io5'
 import { VscReferences } from 'react-icons/vsc'
 import { GrContactInfo } from 'react-icons/gr'
 import { BiDonateHeart } from 'react-icons/bi'
+import router from 'next/router';
 type TrendingProps = {
     
 };
@@ -116,7 +117,7 @@ const Trending:React.FC<TrendingProps> = () => {
                                 <Flex flexDirection="column" width="50%"  p={2}>
                                     
                                     
-                                    <Button height="45px"><GrContactInfo /><Text ml={2}>Referrals</Text></Button>
+                                    <Button onClick={() => {router.push('/companies/datadog')}} height="45px"><GrContactInfo /><Text ml={2}>Referrals</Text></Button>
                                     <Button height="45px" mt={2}><BiDonateHeart /><Text ml={2}>Give a Ref.</Text></Button>
                                 </Flex>
                             </Flex>

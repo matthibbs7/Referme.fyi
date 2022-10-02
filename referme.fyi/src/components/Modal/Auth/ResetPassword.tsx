@@ -51,7 +51,7 @@ const ResetPassword:React.FC<ResetPasswordProps> = () => {
             </>
         ) : (
         <form onSubmit={onSubmit}>
-            <Text textAlign='center' color="gray.500" fontSize="10pt" mb={2}>Enter the email associated with your account and we'll send you a reset link</Text>
+            <Text textAlign='center' color="black" fontSize="10pt" mb={2}>Enter the email associated with your account and we'll send you a reset link</Text>
             <Text fontWeight={700}>Email</Text>
             <Input required name="email" placeholder="Email Address" type="email" mb={2} onChange={(event) => setEmail(event.target.value)} />
             <Text textAlign='center' color='red' fontSize='10pt'>{FIREBASE_ERRORS[error?.message as keyof typeof FIREBASE_ERRORS]}</Text>
