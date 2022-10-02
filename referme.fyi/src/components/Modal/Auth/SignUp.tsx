@@ -2,16 +2,17 @@ import { Button, Divider, Input, Text, Image, Flex } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { authModalState } from '../../../atoms/authModalAtom';
-import { auth } from '../../../firebase/clientApp';
+import { auth, firestore } from '../../../firebase/clientApp';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import { FIREBASE_ERRORS } from '../../../firebase/errors';
+import { doc } from 'firebase/firestore';
 
 type SignUpProps = {
     
 };
 
 const SignUp:React.FC<SignUpProps> = () => {
-
+    
     const setAuthModalState = useSetRecoilState(authModalState)
 
     const [signUpForm, setSignUpForm] = useState({
@@ -65,7 +66,7 @@ const SignUp:React.FC<SignUpProps> = () => {
 
     return (
         <form onSubmit={onSubmit}>
-            <Text color="gray.500" fontSize="10pt" mb={2}>Sign up to connect with referees or applicants</Text>
+            <Text color="black" fontSize="10pt" mb={2}>Sign up to connect with referees or applicants</Text>
             <Text fontWeight={700}>Email</Text>
             <Input required name="email" placeholder="Email Address" type="email" mb={2} onChange={onChange} />
             <Text fontWeight={700}>Password</Text>

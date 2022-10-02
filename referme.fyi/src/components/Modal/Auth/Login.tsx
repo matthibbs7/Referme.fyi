@@ -49,7 +49,7 @@ const Login:React.FC<LoginProps> = () => {
 
     return (
         <form onSubmit={onSubmit}>
-            <Text color="gray.500" fontSize="10pt" mb={2}>Sign in to connect with referees or applicants</Text>
+            <Text color="black" fontSize="10pt" mb={2}>Sign in to connect with referees or applicants</Text>
             <Text fontWeight={700}>Email</Text>
             <Input required name="email" placeholder="Email Address" type="email" mb={2} onChange={onChange} />
             <Text fontWeight={700}>Password</Text>

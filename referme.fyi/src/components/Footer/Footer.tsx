@@ -1,7 +1,15 @@
 import React from 'react';
 import { Flex, Text, Image, Link, Button } from '@chakra-ui/react';
+import { authModalState } from '../../atoms/authModalAtom';
+import { useSetRecoilState } from 'recoil';
+import { signOut } from 'firebase/auth';
+import { auth } from '../../firebase/clientApp';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import router from 'next/router';
 
 const Footer:React.FC = () => {
+    const [user, loading, error] = useAuthState(auth)
+    const setAuthModalState = useSetRecoilState(authModalState);
     
     return (
         <Flex bg="white" justifyContent="center" height="270px">
@@ -21,7 +29,7 @@ const Footer:React.FC = () => {
                 </Flex>
                 <Flex mt={10} mr="10%" ml="auto" flexDirection="column">
                     <Text fontWeight={700}>Referme.fyi</Text>
-                    <Text mt={2} color="gray.600">About</Text>
+                    <Text _hover={{cursor: 'pointer'}} onClick={() => {router.push('/about')}} mt={2} color="gray.600">About</Text>
                     <Text color="gray.600">Referrals by Company</Text>
                     <Text color="gray.600">Internship Referrals</Text>
                     <Text color="gray.600">Tech Resources</Text>
@@ -34,8 +42,15 @@ const Footer:React.FC = () => {
                 </Flex>
                 <Flex mt={10} mr={5} flexDirection="column">
                     <Text fontWeight={700}>Account</Text>
-                    <Text mt={2} color="gray.600">Login</Text>
-                    <Text color="gray.600">Create Account</Text>
+                    {user ?
+                        <Text _hover={{cursor: 'pointer'}} onClick={() => signOut(auth)} mt={2} color="gray.600">Logout</Text>
+                    :
+                        <>
+                            <Text _hover={{cursor: 'pointer'}} onClick={() => setAuthModalState({open: true, view: 'login'})} mt={2} color="gray.600">Login</Text>
+                            <Text _hover={{cursor: 'pointer'}} onClick={() => setAuthModalState({open: true, view: 'signup'})} color="gray.600">Create Account</Text>
+                        </>
+                    }
+                    
                 </Flex>
             </Flex>
         </Flex>
