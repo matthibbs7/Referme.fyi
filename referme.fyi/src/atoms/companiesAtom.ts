@@ -7,4 +7,6 @@ export interface Company {
     numberOfSubscribers: number;
     numberOfReferrals: number;
     imageURL?: string;
+    brandColor: string;
+    companyLink: string;
 }
