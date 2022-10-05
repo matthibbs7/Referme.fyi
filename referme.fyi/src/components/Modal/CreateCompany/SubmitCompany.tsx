@@ -53,7 +53,7 @@ const SubmitCompany:React.FC<SubmitCompanyProps> = ({ isOpen, handleClose }) => 
           const companyDoc = await getDoc(companyDocRef);
           
           if (companyDoc.exists()) {
-            throw new Error(`Sorry, c/${companyName} already exists.`);
+            throw new Error(`Sorry, companies/${companyName} already exists.`);
           }
 
           await setDoc(companyDocRef, {

@@ -37,7 +37,7 @@ const Trending:React.FC<TrendingProps> = () => {
                                     
                                 </Flex>
                                 <Flex flexDirection="column" width="50%"  p={2}>
-                                    <Button height="45px"><GrContactInfo /><Text ml={2}>Referrals</Text></Button>
+                                    <Button onClick={() => {router.push('/companies/google')}} height="45px"><GrContactInfo /><Text ml={2}>Referrals</Text></Button>
                                     <Button height="45px" mt={2}><BiDonateHeart /><Text ml={2}>Give a Ref</Text></Button>
                                 </Flex>
                             </Flex>
@@ -53,7 +53,7 @@ const Trending:React.FC<TrendingProps> = () => {
                                 <Flex flexDirection="column" width="50%"  p={2}>
                                     
                                     
-                                    <Button height="45px"><GrContactInfo /><Text ml={2}>Referrals</Text></Button>
+                                    <Button onClick={() => {router.push('/companies/amazon')}} height="45px"><GrContactInfo /><Text ml={2}>Referrals</Text></Button>
                                     <Button height="45px" mt={2}><BiDonateHeart /><Text ml={2}>Give a Ref</Text></Button>
                                 </Flex>
                             </Flex>
