@@ -4,13 +4,13 @@ import React from 'react';
 import { Company } from '../../../atoms/companiesAtom';
 import { firestore } from '../../../firebase/clientApp';
 import safeJsonStringify from 'safe-json-stringify';
-import { Box, Flex, Text, Image, Tabs, Tab, TabList, TabPanel, TabPanels, Divider, Button } from '@chakra-ui/react';
+import { Box, Flex, Text, Image, Tabs, Tab, TabList, TabPanel, TabPanels, Divider, Button, Input, InputGroup, InputLeftElement, Badge, Stack, Checkbox } from '@chakra-ui/react';
 import { FaGlobeAmericas, FaMoneyBillWave, FaPen } from 'react-icons/fa'
-import { GrContactInfo } from 'react-icons/gr'
-import { BiDonateHeart, BiDirections} from 'react-icons/bi'
+import { BiCommentDetail, BiDirections, BiChevronDown} from 'react-icons/bi'
 import { HiBookmark } from 'react-icons/hi'
 
 import router from 'next/router';
+import { SearchIcon } from '@chakra-ui/icons';
 
 type companyPageProps = {
     companyData: Company;
@@ -34,7 +34,7 @@ const CompanyPage:React.FC<companyPageProps> = ({ companyData }) => {
             <Flex width="100%" maxWidth='1200px' minWidth="500px" flexDirection="row" style={{backgroundColor: `#${companyData.brandColor}`}} borderRadius="20px" mt={5} mb={5} p={3}>
                 <Flex flexDirection="column" mr={3} width="23%">
                     <Flex height="335px" bg="white" flexDirection="column" borderRadius="15px">
-                        <Image mt={8} ml="auto" mr="auto" src={companyData.imageURL} height="72px" width="72px" />
+                        <Image mt={8} ml="auto" mr="auto" src={companyData.imageURL} maxHeight="72px" maxWidth="72px" />
                         <Text mt={2} ml="auto" mr="auto" color="black" fontWeight={700} fontSize="24pt">{companyData.name[0].toUpperCase() + companyData.name.slice(1)}</Text>
                         <Text ml="auto" mr="auto" color="gray.700" fontSize="10pt">{companyData.numberOfSubscribers + " Page Subscribers"}</Text>
                         <Box mt={4} ml="auto" mr="auto" width="80%" height="1.5px" bg="lightgray"></Box>
@@ -67,15 +67,150 @@ const CompanyPage:React.FC<companyPageProps> = ({ companyData }) => {
                             <Tab width="50%" color="black" fontWeight={700}>Give a Referral</Tab>
                         </TabList>
 
-                        <TabPanels>
-                            <TabPanel>
-                            <p>one!</p>
+                        <TabPanels width="100%">
+                            <TabPanel width="100%">
+                                <Flex ml={-4} width="104%">
+                                    <Flex width="100%" flexDirection="row">
+                                        <Flex p={4} flexDirection="column" width="70%" border="2px solid lightgray" borderRadius="15px">
+                                            
+                                            
+                                            <Flex flexDirection="row" mt={1} flexWrap="wrap" justifyContent="center">
+                                                <Flex width="55%" minWidth="270px" flexDirection="column">
+                                                    <Flex mr={2} maxWidth="380px">
+                                                        <InputGroup width="100%" _hover={{cursor: 'pointer'}}>
+                                                            <InputLeftElement
+                                                            pointerEvents='none'
+                                                            children={<SearchIcon color='gray.500' />}
+                                                            />
+                                                            <Input color='gray.600' bg="white" borderWidth={2} type='tel' _placeholder={{color: 'gray.500'}} placeholder='Search referrals' />
+                                                        </InputGroup>
+                                                    </Flex>
+                                                    <Stack ml={1} mt={2} spacing={5} direction='row'>
+                                                        <Checkbox color="gray.600" fontWeight={700} colorScheme='facebook' defaultChecked>
+                                                            Senior+
+                                                        </Checkbox>
+                                                        <Checkbox color="gray.600" fontWeight={700} colorScheme='facebook' defaultChecked>
+                                                            New Grad
+                                                        </Checkbox>
+                                                        <Checkbox color="gray.600" fontWeight={700} colorScheme='facebook' defaultChecked>
+                                                            Internship
+                                                        </Checkbox>
+                                                    </Stack>
+                                                </Flex>
+                                                <Flex borderLeft="1px solid lightgray" ml={2} width="40%" flexDirection="column">
+                                                    <Flex ml={4} flexDirection="row" >
+                                                    <Text mt={2} fontWeight={700}>Sort By:</Text>
+                                                    <Button border="2px dashed lightgray" mt={1} ml={6} borderRadius="10px" height="30px" minWidth="135px" bg="gray.100" color="black"><Text mr="auto">New</Text><BiChevronDown /></Button>
+                                                    </Flex>
+                                                    <Flex ml={4} mt={3.5} flexDirection="row">
+                                                    <Text fontWeight={700}>Order By:</Text>
+                                                    <Button border="2px dashed lightgray" ml={3} mt={-0.5} borderRadius="10px" height="30px" minWidth="135px" bg="gray.100" color="black"><Text mr="auto">Ascending</Text><BiChevronDown /></Button>
+                                                    </Flex>
+                                                </Flex>
+                                            </Flex>
+                                        </Flex>
+                                        <Flex display={{base: "none", lg: 'unset'}} flexDirection="column" p={3} ml={4} width="30%" border="2px solid lightgray" height="120px" borderRadius="15px">
+                                            
+                                            <Text mt={2.5} fontWeight={600} color="black">Use the parameters on the left to filter the list of referrals offered by employees at this company</Text>
+                                        </Flex>
+                                    </Flex>
+                                </Flex>
+                                
+                                <Flex style={{overflowY: 'scroll', height: "650px", whiteSpace: 'nowrap'}} flexDirection="column" ml={-4} width="104%" borderTop="2px solid lightgray" mt={5}>
+                                    <Flex height="130px" flexDirection="column" p={4} mt={5} width="70%" bg="white" border="2px solid lightgray" borderRadius="15px">
+                                        <Flex flexDirection="row">
+                                            <Text fontWeight={700} fontSize="14pt" >Looking to refer 2 smart people</Text>
+                                            <Text ml={2} fontWeight={700} color="gray.500">Seattle, WA</Text>
+                                        </Flex>
+                                        <Flex flexDirection="row" mt={2}>
+                                            <Flex width="100%" flexDirection="row">
+                                                <Text height="25px" bg="teal.200" color="teal.600" borderRadius="20px" fontWeight={700} width="75px" pl={2}>Senior+</Text>
+                                                <Text height="25px" bg="cyan.200" color="cyan.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>New Grad</Text>
+                                                <Text height="25px" bg="purple.200" color="purple.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>Internship</Text>
+                                            </Flex>
+                                            <Button color="gray" border="2px solid lightgray" bg="white" height="30px">0&nbsp;<BiCommentDetail color="gray" fontSize="16pt" /></Button>
+                                        </Flex>
+                                        
+                                    </Flex>
+                                    <Flex mt={4} height="130px" flexDirection="column" p={4} width="70%" bg="white" border="2px solid lightgray" borderRadius="15px">
+                                        <Flex flexDirection="row">
+                                            <Text fontWeight={700} fontSize="14pt" >Looking to refer 2 smart people</Text>
+                                            <Text ml={2} fontWeight={700} color="gray.500">Seattle, WA</Text>
+                                        </Flex>
+                                        <Flex flexDirection="row" mt={2}>
+                                            <Flex width="100%" flexDirection="row">
+                                                <Text height="25px" bg="teal.200" color="teal.600" borderRadius="20px" fontWeight={700} width="75px" pl={2}>Senior+</Text>
+                                                <Text height="25px" bg="cyan.200" color="cyan.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>New Grad</Text>
+                                                <Text height="25px" bg="purple.200" color="purple.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>Internship</Text>
+                                            </Flex>
+                                            <Button color="gray" border="2px solid lightgray" bg="white" height="30px">0&nbsp;<BiCommentDetail color="gray" fontSize="16pt" /></Button>
+                                        </Flex>
+                                        
+                                    </Flex>
+                                    <Flex mt={4} height="130px" flexDirection="column" p={4} width="70%" bg="white" border="2px solid lightgray" borderRadius="15px">
+                                        <Flex flexDirection="row">
+                                            <Text fontWeight={700} fontSize="14pt" >Looking to refer 2 smart people</Text>
+                                            <Text ml={2} fontWeight={700} color="gray.500">Seattle, WA</Text>
+                                        </Flex>
+                                        <Flex flexDirection="row" mt={2}>
+                                            <Flex width="100%" flexDirection="row">
+                                                <Text height="25px" bg="teal.200" color="teal.600" borderRadius="20px" fontWeight={700} width="75px" pl={2}>Senior+</Text>
+                                                <Text height="25px" bg="cyan.200" color="cyan.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>New Grad</Text>
+                                                <Text height="25px" bg="purple.200" color="purple.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>Internship</Text>
+                                            </Flex>
+                                            <Button color="gray" border="2px solid lightgray" bg="white" height="30px">0&nbsp;<BiCommentDetail color="gray" fontSize="16pt" /></Button>
+                                        </Flex>
+                                        
+                                    </Flex>
+                                    <Flex mt={4} height="130px" flexDirection="column" p={4} width="70%" bg="white" border="2px solid lightgray" borderRadius="15px">
+                                        <Flex flexDirection="row">
+                                            <Text fontWeight={700} fontSize="14pt" >Looking to refer 2 smart people</Text>
+                                            <Text ml={2} fontWeight={700} color="gray.500">Seattle, WA</Text>
+                                        </Flex>
+                                        <Flex flexDirection="row" mt={2}>
+                                            <Flex width="100%" flexDirection="row">
+                                                <Text height="25px" bg="teal.200" color="teal.600" borderRadius="20px" fontWeight={700} width="75px" pl={2}>Senior+</Text>
+                                                <Text height="25px" bg="cyan.200" color="cyan.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>New Grad</Text>
+                                                <Text height="25px" bg="purple.200" color="purple.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>Internship</Text>
+                                            </Flex>
+                                            <Button color="gray" border="2px solid lightgray" bg="white" height="30px">0&nbsp;<BiCommentDetail color="gray" fontSize="16pt" /></Button>
+                                        </Flex>
+                                        
+                                    </Flex>
+                                    <Flex mt={4} height="130px" flexDirection="column" p={4} width="70%" bg="white" border="2px solid lightgray" borderRadius="15px">
+                                        <Flex flexDirection="row">
+                                            <Text fontWeight={700} fontSize="14pt" >Looking to refer 2 smart people</Text>
+                                            <Text ml={2} fontWeight={700} color="gray.500">Seattle, WA</Text>
+                                        </Flex>
+                                        <Flex flexDirection="row" mt={2}>
+                                            <Flex width="100%" flexDirection="row">
+                                                <Text height="25px" bg="teal.200" color="teal.600" borderRadius="20px" fontWeight={700} width="75px" pl={2}>Senior+</Text>
+                                                <Text height="25px" bg="cyan.200" color="cyan.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>New Grad</Text>
+                                                <Text height="25px" bg="purple.200" color="purple.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>Internship</Text>
+                                            </Flex>
+                                            <Button color="gray" border="2px solid lightgray" bg="white" height="30px">0&nbsp;<BiCommentDetail color="gray" fontSize="16pt" /></Button>
+                                        </Flex>
+                                        
+                                    </Flex>
+                                    <Flex mt={4} height="130px" flexDirection="column" p={4} width="70%" bg="white" border="2px solid lightgray" borderRadius="15px">
+                                        <Flex flexDirection="row">
+                                            <Text fontWeight={700} fontSize="14pt" >Looking to refer 2 smart people</Text>
+                                            <Text ml={2} fontWeight={700} color="gray.500">Seattle, WA</Text>
+                                        </Flex>
+                                        <Flex flexDirection="row" mt={2}>
+                                            <Flex width="100%" flexDirection="row">
+                                                <Text height="25px" bg="teal.200" color="teal.600" borderRadius="20px" fontWeight={700} width="75px" pl={2}>Senior+</Text>
+                                                <Text height="25px" bg="cyan.200" color="cyan.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>New Grad</Text>
+                                                <Text height="25px" bg="purple.200" color="purple.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>Internship</Text>
+                                            </Flex>
+                                            <Button color="gray" border="2px solid lightgray" bg="white" height="30px">0&nbsp;<BiCommentDetail color="gray" fontSize="16pt" /></Button>
+                                        </Flex>
+                                        
+                                    </Flex>
+                                </Flex>
                             </TabPanel>
                             <TabPanel>
                             <p>two!</p>
-                            </TabPanel>
-                            <TabPanel>
-                            <p>three!</p>
                             </TabPanel>
                         </TabPanels>
                         </Tabs>
