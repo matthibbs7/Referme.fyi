@@ -14,7 +14,7 @@ const SearchInput:React.FC<SearchInputProps> = () => {
                 <InputLeftElement
                 pointerEvents='none'
                 children={<SearchIcon color='gray.500' />}
-                />/images/refermefyi2.png
+                />
                 <Input color='gray.600' bg="white" borderWidth={2} type='tel' _placeholder={{color: 'gray.500'}} placeholder='Search for a company or referee' />
             </InputGroup>
         </Flex>
