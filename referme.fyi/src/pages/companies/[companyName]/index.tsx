@@ -116,8 +116,8 @@ const CompanyPage:React.FC<companyPageProps> = ({ companyData }) => {
                                     </Flex>
                                 </Flex>
                                 
-                                <Flex style={{overflowY: 'scroll', height: "650px", whiteSpace: 'nowrap'}} flexDirection="column" ml={-4} width="104%" borderTop="2px solid lightgray" mt={5}>
-                                    <Flex height="130px" flexDirection="column" p={4} mt={5} width="70%" bg="white" border="2px solid lightgray" borderRadius="15px">
+                                <Flex style={{overflowY: 'scroll', height: "670px", whiteSpace: 'nowrap'}} flexDirection="column" ml={-4} width="104%" borderTop="2px solid lightgray" mt={5}>
+                                    <Flex _hover={{cursor: 'pointer'}} height="130px" flexDirection="column" p={4} mt={5} width="70%" bg="white" border="2px solid lightgray" borderRadius="15px">
                                         <Flex flexDirection="row">
                                             <Text fontWeight={700} fontSize="14pt" >Looking to refer 2 smart people</Text>
                                             <Text ml={2} fontWeight={700} color="gray.500">Seattle, WA</Text>
