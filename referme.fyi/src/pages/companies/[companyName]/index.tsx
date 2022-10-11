@@ -128,7 +128,7 @@ const CompanyPage:React.FC<companyPageProps> = ({ companyData }) => {
                                                 <Text height="25px" bg="cyan.200" color="cyan.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>New Grad</Text>
                                                 <Text height="25px" bg="purple.200" color="purple.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>Internship</Text>
                                             </Flex>
-                                            <Button color="gray" border="2px solid lightgray" bg="white" height="30px">0&nbsp;<BiCommentDetail color="gray" fontSize="16pt" /></Button>
+                                            <Button color="gray" bg="white" height="30px">0&nbsp;<BiCommentDetail color="gray" fontSize="16pt" /></Button>
                                         </Flex>
                                         
                                     </Flex>
@@ -139,11 +139,12 @@ const CompanyPage:React.FC<companyPageProps> = ({ companyData }) => {
                                         </Flex>
                                         <Flex flexDirection="row" mt={2}>
                                             <Flex width="100%" flexDirection="row">
-                                                <Text height="25px" bg="teal.200" color="teal.600" borderRadius="20px" fontWeight={700} width="75px" pl={2}>Senior+</Text>
+                                                <Text height="25px" bg="blue.200" color="blue.600" borderRadius="20px" fontWeight={700} width="58px" pl={2}>Trade</Text>
+                                                <Text ml={3} height="25px" bg="teal.200" color="teal.600" borderRadius="20px" fontWeight={700} width="75px" pl={2}>Senior+</Text>
                                                 <Text height="25px" bg="cyan.200" color="cyan.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>New Grad</Text>
                                                 <Text height="25px" bg="purple.200" color="purple.600" borderRadius="20px" fontWeight={700} ml={3} width="90px" pl={2}>Internship</Text>
                                             </Flex>
-                                            <Button color="gray" border="2px solid lightgray" bg="white" height="30px">0&nbsp;<BiCommentDetail color="gray" fontSize="16pt" /></Button>
+                                            <Button color="gray" bg="white" height="30px">0&nbsp;<BiCommentDetail color="gray" fontSize="16pt" /></Button>
                                         </Flex>
                                         
                                     </Flex>
