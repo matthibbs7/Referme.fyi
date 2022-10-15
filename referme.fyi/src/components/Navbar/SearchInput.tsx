@@ -9,7 +9,7 @@ type SearchInputProps = {
 const SearchInput:React.FC<SearchInputProps> = () => {
     
     return (
-        <Flex flexGrow={1} mr={2} align="center" maxWidth="380px">
+        <Flex  mr={2} align="center" w={["45%", "380px", "380px", "380px"]} ml={[-5, 0, 0, 0]}>
             <InputGroup width="100%" _hover={{cursor: 'pointer'}}>
                 <InputLeftElement
                 pointerEvents='none'

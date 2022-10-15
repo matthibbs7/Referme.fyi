@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import { Divider, Flex, Heading, Text } from '@chakra-ui/react'
+import { Box, Divider, Flex, Heading, Text } from '@chakra-ui/react'
 const About: NextPage = () => {
   return (
     <Flex direction="column" justify="center" align="center" mt={10} pl='20%' pr='20%' textAlign="center">
@@ -15,6 +15,30 @@ const About: NextPage = () => {
         <Heading fontFamily="Nunito" mb={5}>Why should I give a referral?</Heading>
         <Text mb={10} maxWidth="760px">At many big companies, employee referrals come with a cash referral bonus. Because tech talent is so hard to find, companies are willing to pay big bucks to get the inside scoop on potential candidates. It's worth noting that not every company has a paid referral program in place. Some organizations only want to evaluate candidates on the merit of their work. But as the tech hiring marketplace heats up and recruiters fight to attract quality employees, employee referrals are becoming even more valuable. Additionally, employees want to work with people they've worked with before! It makes onboarding easier and can boost company culture all around to have familiar faces around the office.</Text>
         <Text fontWeight={700} mb={10}>Don't miss out! Leverage the power of referrals today!</Text>
+        <>
+          <Box
+            height={{
+              base: '100%', // 0-48em
+              md: '50%', // 48em-80em,
+              xl: '25%', // 80em+
+            }}
+            bg='teal.400'
+            width={[
+              '100%', // 0-30em
+              '50%', // 30em-48em
+              '25%', // 48em-62em
+              '15%', // 62em+
+            ]}
+          />
+          {/* responsive font size */}
+          <Box fontSize={['4pt', '15pt', '30pt', '40pt']}>Font Size</Box>
+          {/* responsive margin */}
+          <Box mt={[2, 4, 6, 8]} width='full' height='24px' bg='tomato' />
+          {/* responsive padding */}
+          <Box bg='papayawhip' p={[2, 4, 6, 8]}>
+            Padding
+          </Box>
+        </>
     </Flex>
   )
 }
