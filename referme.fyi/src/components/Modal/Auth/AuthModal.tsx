@@ -38,7 +38,6 @@ const AuthModal:React.FC = () => {
                 {/* <OAuthButtons /> */}
                 <AuthInputs />
             </Flex>
-            
           </ModalBody>
         </ModalContent>
       </Modal>
