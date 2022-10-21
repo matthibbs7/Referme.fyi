@@ -209,6 +209,7 @@ const CompanyPage:React.FC<companyPageProps> = ({ companyData }) => {
                                         
                                     </Flex>
                                 </Flex>
+                                
                             </TabPanel>
                             <TabPanel>
                             <p>two!</p>
