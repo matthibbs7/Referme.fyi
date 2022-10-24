@@ -68,7 +68,7 @@ const SubmitCompany:React.FC<SubmitCompanyProps> = ({ isOpen, handleClose }) => 
           console.log("Transaction error", error);
           setError(error.message);
         }
-        console.log("ATTEMPTING FILE")
+        
         console.log(selectedFile)
         if (!selectedFile) {
             setLoading(false);
